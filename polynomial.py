@@ -86,10 +86,12 @@ class Div:
             p2_repr = repr(self.p2)
 
         return p1_repr + " / " + p2_repr
+    
+    def evaluate(self, value):
+        return self.p1.evaluate(value) / self.p2.evaluate(value)
+
 
 poly = Add( Add( Int(4), Int(3)), Add( X(), Mul( Int(1), Add( Mul(X(), X()), Int(1)))))
-print(poly)
-
 poly1 = Sub(Div(X(), Int(2)), Add(X(), Int(3)))
 poly2 = Div(Add(X(), Mul(Int(2), X())), Int(5))
 poly3 = Mul(Sub(X(), Int(4)), Div(Int(3), Add(X(), Int(1))))
@@ -97,3 +99,5 @@ poly3 = Mul(Sub(X(), Int(4)), Div(Int(3), Add(X(), Int(1))))
 print(poly1)
 print(poly2)
 print(poly3)
+result = poly.evaluate(-1)
+print(f"result of {poly} when X = -1 is {result}.")
