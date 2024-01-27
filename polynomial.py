@@ -48,6 +48,10 @@ class Mul:
             p2_repr = repr(self.p2)
 
         return p1_repr + " * " + p2_repr
+    
+    def evaluate(self, value):
+        return self.p1.evaluate(value) * self.p2.evaluate(value)
+
 
 # The newly added Sub and Div classes
 class Sub:
@@ -60,6 +64,9 @@ class Sub:
         if isinstance(self.p2, (Add, Sub, Mul, Div)):
             return repr(self.p1) + " - (" + repr(self.p2) + ")"
         return repr(self.p1) + " - " + repr(self.p2)
+    
+    def evaluate(self, value):
+        return self.p1.evaluate(value) - self.p2.evaluate(value)
 
 class Div:
     def __init__(self, p1, p2):
