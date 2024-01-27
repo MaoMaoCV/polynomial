@@ -4,6 +4,9 @@ class X:
 
     def __repr__(self):
         return "X"
+    
+    def evaluate(self, value):
+        return value
 
 class Int:
     def __init__(self, i):
@@ -11,6 +14,9 @@ class Int:
     
     def __repr__(self):
         return str(self.i)
+    
+    def evaluate(self, value):
+        return self.i
 
 class Add:
     def __init__(self, p1, p2):
