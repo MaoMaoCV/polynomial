@@ -70,7 +70,9 @@ class Div:
 
         return p1_repr + " / " + p2_repr
 
-# Testing the new classes with various polynomial expressions
+poly = Add( Add( Int(4), Int(3)), Add( X(), Mul( Int(1), Add( Mul(X(), X()), Int(1)))))
+print(poly)
+
 poly1 = Sub(Div(X(), Int(2)), Add(X(), Int(3)))
 poly2 = Div(Add(X(), Mul(Int(2), X())), Int(5))
 poly3 = Mul(Sub(X(), Int(4)), Div(Int(3), Add(X(), Int(1))))
